@@ -1,67 +1,87 @@
-
-#include<iostream>
+#include "iostream"
 using namespace std;
 
-
-
-class Fruit {
+class Fruit
+{
 public:
-	virtual void sayname() = 0;
-};
-
-class Banana :public Fruit {
-public:
-	void sayname()
+	virtual void sayname()
 	{
-		cout << "我是香蕉\n";
+		cout << "fruit\n";
 	}
 };
 
-class Apple :public Fruit {
+class FruitFactory
+{
 public:
-	void sayname()
+	virtual Fruit* getFruit()
 	{
-		cout << "我是苹果\n";
+		return new Fruit();
 	}
 };
 
-class AbFactory {
 
+//香蕉
+class Banana : public Fruit
+{
 public:
-	virtual Fruit *CreateProduct() = 0;
+	virtual void sayname()
+	{
+		cout << "Banana \n" << endl;
+	}
 };
 
-class BananaFactory :public AbFactory {
+//香蕉工厂
+class BananaFactory : public  FruitFactory
+{
 public:
-	virtual Fruit *CreateProduct() {
+	virtual Fruit* getFruit()
+	{
 		return new Banana;
 	}
 };
 
 
-	class AppleFactory :public AbFactory {
-	public:
-		virtual Fruit *CreateProduct() {
-			return new Apple;
-		}
-	};
+//苹果
+class Apple : public Fruit
+{
+public:
+	virtual void sayname()
+	{
+		cout << "Apple \n" << endl;
+	}
+};
 
-void main() {
+//苹果工厂
+class AppleFactory : public  FruitFactory
+{
+public:
+	virtual Fruit* getFruit()
+	{
+		return new Apple;
+	}
+};
 
-	AbFactory *f = NULL;
+void main()
+{
+	FruitFactory * ff = NULL;
 	Fruit *fruit = NULL;
 
-	f = new BananaFactory;
-	fruit = f->CreateProduct();
+	//1
+	ff = new BananaFactory();
+	fruit = ff->getFruit();
 	fruit->sayname();
-	delete fruit;
-	delete f;
 
-	f = new AppleFactory;
-	fruit = f->CreateProduct();
+	delete fruit;
+	delete ff;
+
+	//2苹果
+	ff = new AppleFactory();
+	fruit = ff->getFruit();
 	fruit->sayname();
-	delete fruit;
-	delete f;
 
+	delete fruit;
+	delete ff;
+
+	cout << "hello....\n";
 	system("pause");
 }
