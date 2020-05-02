@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="原型模式.cpp">
+    <ClCompile Include="代理模式1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="代理模式2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
