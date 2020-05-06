@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="设配器模式.cpp">
+    <ClCompile Include="组合模式.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
