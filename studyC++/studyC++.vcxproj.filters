@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="线程安全单模式.cpp">
+    <ClCompile Include="抽象工厂2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
