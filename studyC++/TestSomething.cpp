@@ -70,20 +70,20 @@ using namespace std;
 //		printf("C test\n");
 //	}
 //};
-//void main()
-//{
+void main()
+{
 //	C c;
 //	((B *)(&c))->func();
 //	((B)c).func();
 //
-//	//int a[5] = { 0 };
-//	//cout << a << endl;
-//	//cout << &a[0] << endl;
-//	//cout << &a << endl;
-//
-//	//cout << a+1 << endl;
-//	//cout << &a[0]+1 << endl;
-//	//cout << &a+1 << endl;
+	int a[5] = { 0 };
+	cout << a << endl;
+	cout << &a[0] << endl;
+	cout << &a << endl;
+
+	cout << a + 1 << endl;
+	cout << &a[0] + 1 << endl;
+	cout << &a + 1 << endl;
 //
 //
 //	char a[5] = { 'a','b','c','d' };
@@ -96,7 +96,7 @@ using namespace std;
 //	printf("p2=%c\n", **p2);
 //	printf("p1+1=%c\n", **(p1 + 1));
 //	printf("p2+1=%c\n", **(p2 + 1));
-//}
+}
 
 //#include<iostream>
 //using namespace std;//c++µÄÃüÃû¿Õ¼ä
