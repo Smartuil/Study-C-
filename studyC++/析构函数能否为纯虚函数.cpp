@@ -13,6 +13,8 @@ public:
 //};
 
 int main() {
-
+	int a[] = { 1,3,4,5,3 };
+	cout << sizeof(a+1);
+	cout << a + 1;
 	return 0;
 }

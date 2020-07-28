@@ -1,49 +1,123 @@
-#include<iostream>
+ï»¿//#include<iostream>
+//using namespace std;
+//
+////æ„é€ å‡½æ•°ä¸­è°ƒç”¨è™šå‡½æ•°èƒ½å‘ç”Ÿå¤šæ€å—ï¼Ÿ
+//class Parent {
+//public:
+//	Parent(int a = 0) {
+//		this->a = a;
+//	}
+//
+//	virtual void print() {
+//		cout << "Dad" << endl;
+//	}
+//protected:
+//private:
+//	int a;
+//};
+//
+//class Child : public Parent {
+//public:
+//	Child(int a = 0, int b = 0) : Parent(a) {
+//		//this->b = b;
+//	}
+//
+//	virtual void print() {
+//		cout << "Child" << endl;
+//	}
+//protected:
+//private:
+//	//int b;
+//};
+//
+//void howToPlay(Parent *base) {
+//	base->print();
+//}
+//void main() {
+//	Child *c = NULL;
+//	Parent *p = NULL;
+//
+//	Child array[] = { Child(1),Child(2), Child(3) };
+//	p = array;
+//	c = array;
+//	p->print();
+//	c->print();
+//	p++;
+//	c++;
+//	p->print();
+//	c->print();
+//}
+
+#define  _CRT_SECURE_NO_WARNINGS 
+#include <iostream>
+
 using namespace std;
 
-//¹¹Ôìº¯ÊıÖĞµ÷ÓÃĞéº¯ÊıÄÜ·¢Éú¶àÌ¬Âğ£¿
-class Parent {
+class Parent
+{
 public:
-	Parent(int a = 0) {
+	Parent(int a)
+	{
 		this->a = a;
 	}
 
-	virtual void print() {
-		cout << "Dad" << endl;
+	virtual void print()
+	{
+		cout << "Parent::print() " << a << endl;
 	}
 protected:
-private:
 	int a;
 };
 
-class Child : public Parent {
+class Child :public Parent {
 public:
-	Child(int a = 0, int b = 0) : Parent(a) {
-		//this->b = b;
+	Child(int a) :Parent(a)
+	{
+
 	}
 
-	virtual void print() {
-		cout << "Child" << endl;
+	virtual void print()
+	{
+		cout << "Child :: Print() " << a << endl;
 	}
-protected:
 private:
-	//int b;
+	int b;
 };
 
-void howToPlay(Parent *base) {
-	base->print();
-}
-void main() {
-	Child *c = NULL;
-	Parent *p = NULL;
+int main(void)
+{
+	
+	Child array[] = { Child(0), Child(1), Child(2) };
+	//						array[0]   array[1] array[2]
 
-	Child array[] = { Child(1),Child(2), Child(3) };
-	p = array;
-	c = array;
-	p->print();
-	c->print();
-	p++;
-	c++;
-	p->print();
-	c->print();
+	Child *cp = &array[0];
+	Parent *pp = &array[0];
+
+
+	cp->print(); //Child::
+	pp->print(); //Child::å‘ç”Ÿå¤šæ€
+
+	Parent pppp(10);
+	Child ccc(10);
+	cout << sizeof(ccc);
+	cout << sizeof(pppp);
+
+	cout << "------" << endl;
+
+	cp++; //Child::12
+	//pp++;//8
+	pp = cp;
+
+	cp->print();
+	pp->print();
+
+	cout << " -----  " << endl;
+
+
+	int i = 0;
+	for (i = 0, cp = &array[0], pp = cp; i < 3; i++, cp++, pp = cp) {
+		pp->print();
+	}
+
+	return 0;
 }

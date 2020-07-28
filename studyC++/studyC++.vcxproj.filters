@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="析构函数能否为纯虚函数.cpp">
+    <ClCompile Include="C语言的多态.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
