@@ -20,6 +20,8 @@ void main1(){
 	cout << endl;
 
 	cout << m2 << endl;
+	//MyVector<int> m3;
+	//m3 = m1;
 }
 
 void main2() {
@@ -93,9 +95,9 @@ ostream & operator<<(ostream &o, Teacher &t) {
 }
 
 
-void main() {
+void main3() {
 	Teacher t1("t1", 23), t2("t2", 24), t3("t3", 25), t4("t4", 26);
-	MyVector<Teacher *> tArray(4);
+	MyVector<Teacher *> tArray(4);//调用完MyVector构造后没有调用Teacher的
 	tArray[0] = &t1;
 	tArray[1] = &t2;
 	tArray[2] = &t3;//浅拷贝
@@ -110,12 +112,13 @@ void main() {
 }
 
 
-void main3() {
+void main() {
+	Teacher *a;//不会调用构造函数
 	Teacher t1("t1", 23), t2("t2", 24), t3("t3", 25), t4("t4", 26);
-	MyVector<Teacher> tArray(4);
+	MyVector<Teacher> tArray(4);//调用完MyVector构造后调用Teacher的
 	tArray[0] = t1;
 	tArray[1] = t2;
-	tArray[2] = t3;//浅拷贝
+	tArray[2] = t3;//深拷贝
 	tArray[3] = t4;
 
 	//for (int i = 0; i < 4; i++) {

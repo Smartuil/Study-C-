@@ -70,7 +70,7 @@ void test1()
 	Test t1(1, 2);
 	Test t2(t1);
 	//通过t1 给t2 进行赋值
-
+	Test t3 = t1;//copy
 	t2.printT();
 }
 
